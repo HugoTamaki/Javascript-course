@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iterations</title>
+  <script type="text/javascript">
+    // filtrar
+    var animals = [
+      {
+        name: 'Larry',
+        species: 'habbit'
+      },
+      {
+        name: 'Bob',
+        species: 'dog'
+      },
+      {
+        name: 'John',
+        species: 'cat'
+      },
+      {
+        name: 'Fido',
+        species: 'dog'
+      }
+    ]
+
+    // como fazer para filtrar somente os cães?
+    var dogs = [];
+    for(var i=0;i<animals.length;i++) {
+      if (animals[i].species === 'dog')
+        dogs.push(animals[i]);
+    }
+
+    var dogs = animals.filter(function(animal) {
+      return animal.species === 'dog';
+    });
+
+    console.log(dogs);
+
+    // como fazer para encontrar um cão específico por nome?
+    var dog = null;
+    for(var i=0;i<animals.length;i++) {
+      if (animals[i].name === 'Fido')
+        dog = animals[i];
+    };
+
+    var dog = animals.find(function(animal) {
+      return animal.name === 'Fido';
+    });
+
+    console.log(dog);
+
+    // como fazer para transformar um array?
+    // magic!!!
+
+    var dogsNames = [];
+    for(var i=0;i<animals.length;i++) {
+      dogsNames.push(animals[i].name);
+    }
+
+    var dogsNames = animals.map(function(animal) {
+      return animal.name + " is a " + animal.species;
+    });
+
+    console.log(dogsNames);
+
+    // como fazer para iterar?
+
+    var purchases = [
+      {
+        object: 'Bolsa',
+        price: 18
+      },
+      {
+        object: 'Livro',
+        price: 30
+      },
+      {
+        object: 'Coca',
+        price: 20
+      }
+    ];
+
+    var total = 0
+    for(var i=0;i<purchases.length;i++) {
+      total += purchases[i].price;
+    }
+
+    var total = 0;
+    purchases.forEach(function(purchase) {
+      total += purchase.price;
+    });
+
+    var total = purchases.reduce(function(sum, purchase) {
+      return sum + purchase.price;
+    }, 0);
+
+    console.log(total);
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

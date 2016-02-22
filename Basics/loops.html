@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loops</title>
+  <script>
+    
+    // repete 10 vezes hello world
+    for(var i=0;i<11;i++) {
+      console.log('Hello world!!!');
+    }
+
+    var myArray = ['Apple', 'Banana', 'Melon'];
+
+    for(var i=0;i<myArray.length;i++) {
+      console.log(myArray[i]);
+    }
+
+    var myOtherArray = [];
+
+    for(var i=0;i<10;i++) {
+      myOtherArray.push(i);
+    }
+
+    console.log(myOtherArray);
+
+    var evens = [];
+    for(var i=0;i<myOtherArray.length;i++) {
+      if (myOtherArray[i] % 2 === 0) {
+        evens.push(myOtherArray[i]);
+      }
+    }
+
+    console.log(evens);
+
+    var i = 0;
+
+    while (i < 10) {
+      console.log('ahuehuaheu');
+      i++;
+    }
+  </script>
+</head>
+<body>
+  <p>hello</p>
+</body>
+</html>
