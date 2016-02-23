@@ -67,3 +67,29 @@ console.log(x / y);
 
 ## Condicionais
 
+If / Else
+
+```
+if (idade > 18) {
+  console.log("Maior de idade");
+} else {
+  console.log("Menor de idade");
+}
+```
+
+```
+if (idade > 18) {
+  console.log("Maior de idade");
+} else if (idade == 18) {
+  console.log("Você tem exatamente 18!");
+} else {
+  console.log("Menor de idade");
+}
+```
+
+Case
+
+```
+var idade = 18
+
+```
