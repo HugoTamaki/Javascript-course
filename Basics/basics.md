@@ -10,7 +10,7 @@ Javascript é uma linguagem interpretada, de tipagem fraca, muito usada em naveg
 Basicamente existem X tipos. 
 São eles: String, number, boolean, array, object
 
-### Dinâmico
+## Dinâmico
 
 ```
 var x;
@@ -22,7 +22,7 @@ x = "John"
 console.log(x);
 ```
 
-### Tipagem fraca
+## Tipagem fraca
 
 ```
 var x = 99;
@@ -38,3 +38,32 @@ console.log(x);
 ## Operadores
 
 - Soma
+- Subtração
+- Multiplicação
+- Divisão
+```
+var x = 5;
+var y = 6;
+console.log(x + y);
+console.log(x - y);
+console.log(x * y);
+console.log(x / y);
+```
+
+## Comparadores
+
+- Maior / maior que
+- Menor / menor que
+- Identidade
+- Equalidade
+
+```
+5 > 3
+6 < 10
+5 == "5" //  true
+5 === "5" //  false
+5 === 5 // true
+```
+
+## Condicionais
+
