@@ -90,6 +90,25 @@ if (idade > 18) {
 Case
 
 ```
-var idade = 18
+var opcao = '+'
+var x = 5;
+var y = 9;
 
+switch(opcao) {
+  case '+':
+    console.log(x + y);
+    break;
+  case '-':
+    console.log(x - y);
+    break;
+  case '*':
+    console.log(x * y);
+    break;
+  case '/':
+    console.log(x / y);
+    break;
+  default:
+    console.log('Escolha uma operação correta!');
+    break;
+}
 ```
