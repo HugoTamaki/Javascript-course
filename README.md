@@ -88,6 +88,8 @@ if (idade > 18) {
 }
 ```
 
+Desafio: Criar condicionais usando alguns comparativos
+
 ### Case
 
 ```
@@ -209,7 +211,9 @@ console.log(hugo.lastName);
 console.log(hugo.readBooks);
 
 // criando uma "classe" geradora de objetos
-var Person = function() {
+var Person = function(firstName) {
+  this.firstName = firstName;
+
   this.sayHello = function() {
     return "Hello world!";
   }
@@ -232,6 +236,32 @@ console.log(maria.sayHello());
 maria.setFirstName('Maria');
 maria.setLastName('Silva');
 console.log(maria.getFullName());
+```
+
+### Objeto Date
+
+```
+var d = new Date();
+
+console.log(d.getDate());
+console.log(d.getDay());
+console.log(d.getMonth());
+console.log(d.getYear());
+```
+
+### Objeto Math
+
+```
+Math.random()
+Math.min()
+Math.max()
+Math.round()
+Math.ceil()
+Math.floor()
+var min = 1;
+var max = 10;
+
+Math.floor(max + Math.random() * min);
 ```
 
 ## Loops
