@@ -189,8 +189,9 @@ console.log(fruta1);
 console.log(fruta2);
 console.log(fruta3);
 console.log(arr);
-
 ```
+
+Desafio: galeria de imagens
 
 ## Objetos
 
