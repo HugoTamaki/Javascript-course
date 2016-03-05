@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>exemplo 6</title>
+  <style>
+    .container {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #button {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      width: 100px;
+      height: 70px;
+      font-size: 20px;
+    }
+  </style>
+  <script>
+    var on = false;
+
+    function toggleLamp () {
+      var img = document.getElementById("lamp");
+      var button = document.getElementById("button");
+
+      if (on) {
+        img.src = "../images/lamp-off.png";
+        button.value = "Ligar";
+      } else {
+        img.src = "../images/lamp-on.png";
+        button.value = "Desligar";
+      }
+      on = !on;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img src="../images/lamp-off.png" id="lamp" alt="lampada">
+    <input type="button" id="button" value="Ligar" onclick="toggleLamp()">
+  </div>
+</body>
+</html>
