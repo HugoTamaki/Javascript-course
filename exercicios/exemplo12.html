@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>exemplo 12</title>
+  <script>
+    var pessoa = {}
+
+    pessoa.nome = "Fulano";
+    pessoa.idade = 20;
+    pessoa.sobreNome = "Furingo";
+    pessoa.nomeCompleto = function () {
+      return this.nome + " " + this.sobreNome;
+    }
+
+    var pessoa = {
+      nome: "Fulano",
+      idade: 20,
+      sobreNome: "Furingo",
+      nomeCompleto: function () {
+        return this.nome + " " + this.sobreNome;
+      },
+      endereco: {
+        logradouro: "Rua lalal",
+        numero: 80,
+        cep: "22222-2"
+      },
+      livros: [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+
+    var Person = function (nome, sobreNome, idade) {
+      this.nome = nome;
+      this.sobreNome = sobreNome;
+      this.idade = idade;
+
+      this.nomeCompleto = function () {
+        return this.nome + " " + this.sobreNome;
+      }
+    }    
+
+
+    var joao = new Person("Joao", "Furingo", 20);
+    var maria = new Person("Maria", "Furingo", 20);
+
+    // console.log(pessoa);
+    console.log(joao.nome);
+    console.log(joao.idade);
+    console.log(joao.nomeCompleto());
+
+    console.log(maria.nome);
+    console.log(maria.idade);
+    console.log(maria.nomeCompleto());
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

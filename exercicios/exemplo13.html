@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>exemplo 13</title>
+  <script>
+    setInterval(function() {
+      var now = new Date()
+      var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds()
+      document.getElementById("time").innerHTML = time
+    }, 1000)
+  </script>
+</head>
+<body>
+  <p id="time"></p>
+</body>
+</html>
