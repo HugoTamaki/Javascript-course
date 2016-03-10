@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phoneList">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body ng-controller="phoneListCtrl">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4">
+        <h1 ng-bind="app"></h1>
+
+        <table class="table">
+          <thead>
+            <th>Name</th>
+            <th>Number</th>
+          </thead>
+          <tr ng-repeat="contact in contactList">
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.number }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

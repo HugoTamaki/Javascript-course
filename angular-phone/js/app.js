@@ -1,0 +1,1 @@
+var phoneList = angular.module("phoneList", []);
