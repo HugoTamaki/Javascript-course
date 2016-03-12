@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>exercicio 15</title>
+  <script>
+    
+  var animals = [
+    {name: 'Bobby', type: 'Dog'},
+    {name: 'Fido', type: 'Dog'},
+    {name: 'Furingo', type: 'Cat'},
+    {name: 'Lula', type: 'Rat'},
+    {name: 'Fluffy', type: 'Rabbit'}
+  ];
+
+  // var dogs = [];
+
+  // for(var i=0;i<animals.length;i++) {
+  //   if (animals[i].type === 'Dog') {
+  //     dogs.push(animals[i].name);
+  //   }
+  // }
+
+  var letterNumbers = animals.filter(function(animal) {
+    return animal.type === 'Dog';
+  })
+  .map(function(animal) {
+    return animal.name;
+  })
+  .reduce(function(sum, animal) {
+    return sum + animal.length;
+  }, 0);
+
+  console.log(letterNumbers);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

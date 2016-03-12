@@ -22,6 +22,7 @@
           <tr ng-repeat="contact in contactList">
             <td>{{ contact.name }}</td>
             <td>{{ contact.number }}</td>
+            <td><button class="btn btn-danger" ng-click="deleteContact(contact.id)">Apagar</button></td>
           </tr>
         </table>
         <!-- <form action="" name="contactForm"> -->
