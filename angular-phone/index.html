@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="phoneList">
 <head>
   <meta charset="UTF-8">
   <title>Agenda</title>
@@ -8,7 +8,7 @@
   <script src="js/controllers.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
-<body>
+<body ng-controller="phoneListCtrl">
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-lg-offset-4">
@@ -24,6 +24,11 @@
             <td>{{ contact.number }}</td>
           </tr>
         </table>
+        <!-- <form action="" name="contactForm"> -->
+          Nome: <input type="text" name="name" ng-model="contact.name"><br/>
+          Número: <input type="text" name="number" ng-model="contact.number">
+          <button type="submit" ng-click="createContact(contact)">Criar</button>
+        <!-- </form> -->
       </div>
     </div>
   </div>
