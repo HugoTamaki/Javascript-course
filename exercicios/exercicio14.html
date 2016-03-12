@@ -26,10 +26,84 @@
     }
   </style>
   <script>
-    
+    var tarefas = [
+      {
+          name: "Estudar",
+          done: false
+      },
+      {
+          name: "Dormir",
+          done: false
+      },
+      {
+          name: "Jogar videogame",
+          done: true
+      }
+    ];
+
+    function formatHTML () {
+        var html = "";
+        
+        tarefas.forEach(function (task, index) {
+          html += '<tr>';
+          html += '<td>' + task.name + '</td>';
+          html += '<td><i class="fa ' + (task.done ? 'fa-check' : 'fa-close') + '"></i></td>';
+          html += '<td>feito: <input type="checkbox" ' + (task.done ? 'checked' : '') + ' onchange="changeStatus(this, ' + index + ')"></td>';
+          html += '<td><span class="btn btn-danger" onclick="deleteTask(' + index + ')">Apagar</span></td>';
+          html += '</tr>';
+        });
+
+        document.getElementById('table-body').innerHTML = html;
+    }
+
+    function addTask () {
+      var task = document.getElementById('newTask').value;
+
+      if (task === '') {
+        alert('Errado!');
+      } else if (checkTask(task)) {
+        alert("A tarefa " + repeated[0].name + " já existe.");
+      } else {
+        tarefas.push({ name: task, done: false });
+
+        formatHTML();
+
+        document.getElementById('newTask').value = "";
+      }
+    }
+
+    var repeated = [];
+
+    function checkTask(task){
+      //SE NAO TIVER NENHUMA TAREFA COM ESTE NOME
+      repeated = tarefas.filter(function (element){
+        return (element.name === task);
+      })
+
+      return repeated.length > 0 ? true : false;
+    }
+
+    function deleteTask(index) {
+      tarefas.splice(index, 1);
+
+      formatHTML();
+    }
+
+    function changeStatus(self, index) {
+      var task = tarefas[index]
+
+      if (self.checked) {
+        task.done = true
+      } else {
+        task.done = false
+      }
+
+      tarefas[index] = task;
+      formatHTML();
+    }
   </script>
 </head>
-<body>
+<body onload="formatHTML()">
   <div class="container">
     <div class="row-centered">
       <div class="col-lg-4 col-centered">
@@ -43,25 +117,13 @@
             </tr>
           </thead>
           <tbody id="table-body">
-            <tr>
-              <td>Tarefa</td>
-              <td><i class="fa fa-check"></i></td>
-              <td>feito: <input type="checkbox"></td>
-              <td><span class="btn btn-danger">Apagar</span></td>
-            </tr>
-            <tr>
-              <td>Tarefa</td>
-              <td><i class="fa fa-check"></i></td>
-              <td>feito: <input type="checkbox"></td>
-              <td><span class="btn btn-danger">Apagar</span></td>
-            </tr>
-            <tr>
-              <td>Tarefa</td>
-              <td><i class="fa fa-check"></i></td>
-              <td>feito: <input type="checkbox"></td>
-              <td><span class="btn btn-danger">Apagar</span></td>
-            </tr>
           </tbody>
+          <tfoot>
+            <td><input type="text" id="newTask" placeholder="Tarefa"></td>
+            <td></td>
+            <td></td>
+            <td><input type="button" value="Incluir" class="btn btn-primary" onclick="addTask()"></td>
+          </tfoot>
         </table>
       </div>
     </div>
